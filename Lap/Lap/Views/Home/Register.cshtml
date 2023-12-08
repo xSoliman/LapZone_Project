@@ -1,0 +1,199 @@
+﻿@model Lap.Models.Customer
+
+@{
+    Layout = null; // Disable layout for simplicity
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: auto;
+            padding: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: darkred;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #3498db;
+            }
+
+        span {
+            color: #e74c3c;
+        }
+
+        .custom-file {
+            position: relative;
+            overflow: hidden;
+            color: #001;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .custom-file-input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #001;
+            margin: 0;
+            opacity: 0;
+        }
+
+        .custom-file-label {
+            display: inline-block;
+            cursor: pointer;
+            padding: 8px 12px;
+            background-color: #001;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+            .custom-file-label:hover {
+                background-color: #2980b9;
+                color: #001;
+            }
+
+        .field-validation-error[data-valmsg-for="Photo"] {
+            display: block;
+            text-align: center;
+            color: #e74c3c; /* You can adjust the color if needed */
+            margin-top: 10px; /* Adjust the top margin as needed */
+        }
+      
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('form').addEventListener('submit', function (event) {
+                var password = document.querySelector('input[name="Password"]').value;
+                var confirmPassword = document.querySelector('input[name="ConfirmPassword"]').value;
+
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match.');
+                    event.preventDefault();
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <form method="post" asp-action="Register" asp-controller="Home">
+        @Html.AntiForgeryToken()
+
+        <h2 style="text-align: center;">Sign Up</h2>
+
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span>
+
+        <label for="ConfirmPassword">Confirm Password</label>
+        <input type="password" name="ConfirmPassword" />
+
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" />
+        <span asp-validation-for="Phone"></span>
+       <div class="form-group">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" asp-for="Photo" name="photo" accept="image/*" onchange="updateFileName()">
+        <label class="custom-file-label" id="photoLabel" for="Photo">Choose a photo</label>
+    </div>
+    <span class="text-danger">@Html.ValidationMessageFor(model => model.Photo)</span>
+</div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.querySelector('form').addEventListener('submit', function (event) {
+                    var firstName = document.getElementById('FirstName').value;
+                    var lastName = document.getElementById('LastName').value;
+
+                    if (!isValidName(firstName)) {
+                        document.querySelector('[data-valmsg-for="FirstName"]').innerText = 'First name should only contain letters and spaces.';
+                        event.preventDefault();
+                    } else {
+                        document.querySelector('[data-valmsg-for="FirstName"]').innerText = ''; // Clear error message
+                    }
+
+                    if (!isValidName(lastName)) {
+                        document.querySelector('[data-valmsg-for="LastName"]').innerText = 'Last name should only contain letters and spaces.';
+                        event.preventDefault();
+                    } else {
+                        document.querySelector('[data-valmsg-for="LastName"]').innerText = ''; // Clear error message
+                    }
+                });
+            });
+
+            function isValidName(name) {
+                return /^[a-zA-Z\s]+$/.test(name);
+            }
+        </script>
+
+<script>
+    function updateFileName() {
+        // Get the input element and its value
+        var input = document.querySelector('.custom-file-input');
+        var fileName = input.value.split('\\').pop();
+
+        // Update the label text with the selected file name
+        document.getElementById('photoLabel').innerText = fileName;
+    }
+</script> 
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="@Url.Action("Login", "Home")">Login</a></p>
+    </form>
+</body>
+</html>
