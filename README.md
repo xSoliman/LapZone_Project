@@ -17,7 +17,7 @@ Project Name: <b>LapZone</b>
 
 Project Description: LapZone is a simple <b>e-commerce website</b> that specializes in selling laptops and their accessories.
 
-The primary technology used: <b>ASP.NET MVC</b>.
+The primary technology used: <b>ASP.NET CORE MVC</b>.
 
 
 
