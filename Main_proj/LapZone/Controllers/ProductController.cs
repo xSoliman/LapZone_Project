@@ -6,38 +6,61 @@ using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.IO;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 
 public class ProductController : Controller
 {
-    private readonly LapZoneContext _db;
-    public ProductController(LapZoneContext db)
-    {
-        _db = db;
+	private readonly LapZoneContext _db;
+	private readonly IHostingEnvironment _host;
 
-    }
-    public IActionResult Index()
-    {
-        List<Product> objProductList = _db.Products.ToList();
+	public ProductController(LapZoneContext db, IHostingEnvironment host)
+	{
+		_db = db;
+		_host = host;
 
-        return View(objProductList);
-    }
+	}
+	public IActionResult Index()
+	{
+		List<Product> objProductList = _db.Products.ToList();
 
-    public IActionResult Create()
-    {
+		return View(objProductList);
+	}
+	public IActionResult Create()
+	{
 
-        return View();
-    }
+		return View();
+	}
 
-    [HttpPost]
-    public IActionResult Create(Product obj, IEnumerable<IFormFile> Images)
-    {
-        
-            _db.Products.Add(obj);
+	[HttpPost]
+	[ValidateAntiForgeryToken]
+	public IActionResult Create(Product obj)
+	{
 
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+		/*if (ModelState.IsValid)
+		{*/
+			string fileName = string.Empty;
+			if (obj.clientFile != null)
+			{
+				string upload = Path.Combine(_host.WebRootPath, "Images/Products");
+				fileName = obj.clientFile.FileName;
+				string fullPath = Path.Combine(upload, fileName);
+				obj.clientFile.CopyTo(new FileStream(fullPath, FileMode.Create));
+				obj.ImagePath = fileName;
 
+			}
 
-    }
+			_db.Products.Add(obj);
+			_db.SaveChanges();
+			TempData["successData"] = "Item has been added successfully";
+			return RedirectToAction("Index");
+
+/*
+		}
+		else
+		{
+			return View(obj);
+		}*/
+
+	}
 }

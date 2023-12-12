@@ -14,7 +14,6 @@ public partial class Product
 
     [Required]
     [StringLength(100)]
-    [Unicode(false)]
     public string ProductName { get; set; }
 
     [Column("_Description", TypeName = "text")]
@@ -27,6 +26,8 @@ public partial class Product
     public int CategoryId { get; set; }
 
     public int StockQuantity { get; set; }
+
+    public string ImagePath { get; set; }
 
     [InverseProperty("Product")]
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
@@ -46,6 +47,9 @@ public partial class Product
 
     [InverseProperty("Product")]
     public virtual ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
+
+    [NotMapped]
+    public IFormFile clientFile { get; set; }  
 
 
 }

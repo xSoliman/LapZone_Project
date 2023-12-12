@@ -1,4 +1,4 @@
-﻿@model LapZone.Models.Product
+﻿@model Product
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,9 +59,30 @@
         <label asp-for="Description"></label>
         <input asp-for="Description" type="text" class="form-control" />
 
+        <input type="file" asp-for="clientFile" onchange="loadFile(event)" />
+        <img id="myImg" height="200" />
 
 
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary" style="width:150px">Save</button>
+        <a asp-action="Index" asp-controller="Product" class="btn btn-secondary" style="width:150px">
+            back to items
+        </a>
+
     </form>
+    @section Scripts {
+
+        @await Html.PartialAsync("_ValidationScriptsPartial")
+        <script>
+
+            var loadFile = function (event) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    var myImg = document.getElementById('myImg');
+                    myImg.src = reader.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        </script>
+    }
 </body>
 </html>
