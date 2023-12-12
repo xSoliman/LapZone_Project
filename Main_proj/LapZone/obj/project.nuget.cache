@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VgLAtt2MnHVVjTgAn9ZI478D5ZtupPZaWjuscXpQk7k2Sd6PDZrP0F+HNgj6e+A77nshcClQ+5q69ab/w46lSQ==",
+  "dgSpecHash": "lvhphPkiH9uJiIGds3PYEhZBLjRtZLpxzRZUqTu/Ryq/15R7ptIWFHRFYkL075hd69WXBqrEQ/LZ8zScVh0kkA==",
   "success": true,
-  "projectFilePath": "E:\\LapZone_Project\\Main\\Main_proj\\LapZone\\LapZone.csproj",
+  "projectFilePath": "E:\\LapZone_Project\\Github\\LapZone_Project\\Main_proj\\LapZone\\LapZone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\solim\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\solim\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

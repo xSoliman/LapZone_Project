@@ -15,9 +15,17 @@ namespace LapZone.Controllers
 
         public IActionResult Index()
         {
+         /*   var sess = HttpContext.Session.GetString("Email");
+
+            if (string.IsNullOrEmpty(sess))
+            {
+
+                return RedirectToAction("Register", "Account");
+            }*/
+
             return View();
         }
-
+       
         public IActionResult Privacy()
         {
             return View();

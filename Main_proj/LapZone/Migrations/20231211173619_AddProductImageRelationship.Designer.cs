@@ -4,6 +4,7 @@ using LapZone.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LapZone.Migrations
 {
     [DbContext(typeof(LapZoneContext))]
-    partial class LapZoneContextModelSnapshot : ModelSnapshot
+    [Migration("20231211173619_AddProductImageRelationship")]
+    partial class AddProductImageRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -136,6 +139,29 @@ namespace LapZone.Migrations
                         .HasName("PK__Category__19093A2BE052224C");
 
                     b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("LapZone.Models.Image", b =>
+                {
+                    b.Property<int>("ImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ImageId"));
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ImageId")
+                        .HasName("PK__Image__F89B5F9A5F4106E9");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Image");
                 });
 
             modelBuilder.Entity("LapZone.Models.LaptopDetail", b =>
@@ -360,10 +386,6 @@ namespace LapZone.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("Photo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("RoleId")
                         .HasColumnType("int")
                         .HasColumnName("RoleID");
@@ -476,6 +498,18 @@ namespace LapZone.Migrations
                         .HasConstraintName("FK_Product_CartItem");
 
                     b.Navigation("Cart");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("LapZone.Models.Image", b =>
+                {
+                    b.HasOne("LapZone.Models.Product", "Product")
+                        .WithMany("Images")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_Product_Image");
 
                     b.Navigation("Product");
                 });
@@ -599,6 +633,8 @@ namespace LapZone.Migrations
             modelBuilder.Entity("LapZone.Models.Product", b =>
                 {
                     b.Navigation("CartItems");
+
+                    b.Navigation("Images");
 
                     b.Navigation("LaptopDetail")
                         .IsRequired();

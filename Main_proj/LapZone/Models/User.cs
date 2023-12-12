@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -13,25 +14,36 @@ namespace LapZone.Models;
 public partial class User
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("UserID")]
     public int UserId { get; set; }
 
-    [Required]
     [StringLength(100)]
+    [Required(ErrorMessage = "First name is required.")]
+    [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "First name should only contain letters and spaces.")]
     public string FullName { get; set; }
 
-    [Required]
     [StringLength(100)]
+    [Required(ErrorMessage = "Email is required.")]
+    [MaxLength(255)]
+    [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Please Enter Valid E-mail")]
+
     public string Email { get; set; }
 
-    [Required]
     [StringLength(255)]
+    [MaxLength(255)]
+    [MinLength(8, ErrorMessage = "Password must be at least 8 characters long")]
     public string PasswordHash { get; set; }
 
     [StringLength(20)]
+    [Required(ErrorMessage = "Phone is required.")]
+
     public string PhoneNumber { get; set; }
 
+    public string Photo { get; set; }
+
     [Column("RoleID")]
+    [DefaultValue(2)]
     public int RoleId { get; set; }
 
     [InverseProperty("User")]

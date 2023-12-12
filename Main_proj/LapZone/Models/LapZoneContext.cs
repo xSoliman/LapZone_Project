@@ -7,10 +7,14 @@ namespace LapZone.Models;
 
 public partial class LapZoneContext : DbContext
 {
+
+    public LapZoneContext() { }
+
     public LapZoneContext(DbContextOptions<LapZoneContext> options)
         : base(options)
     {
     }
+
 
     public virtual DbSet<Address> Addresses { get; set; }
 
@@ -36,7 +40,7 @@ public partial class LapZoneContext : DbContext
 
     public virtual DbSet<Wishlist> Wishlists { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+	protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<UserRole>().HasData(
             new UserRole {RoleId=1,RoleName = "Admin" },
@@ -162,6 +166,8 @@ public partial class LapZoneContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__User_Wishlist");
         });
+
+
 
         OnModelCreatingPartial(modelBuilder);
     }

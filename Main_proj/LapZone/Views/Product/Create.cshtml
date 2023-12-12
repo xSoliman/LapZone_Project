@@ -1,0 +1,67 @@
+﻿@model LapZone.Models.Product
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+    <style>
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add Product</h2>
+
+    <form method="post" enctype="multipart/form-data">
+
+        <label asp-for="ProductName"></label>
+        <input asp-for="ProductName" type="text" class="form-control" />
+
+        <label asp-for="Price"></label>
+        <input asp-for="Price" type="text" class="form-control" />
+
+        <label asp-for="StockQuantity"></label>
+        <input asp-for="StockQuantity" type="text" class="form-control" />
+
+        <label asp-for="CategoryId"></label>
+        <input asp-for="CategoryId" type="text" class="form-control" />
+
+        <label asp-for="Description"></label>
+        <input asp-for="Description" type="text" class="form-control" />
+
+
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</body>
+</html>
