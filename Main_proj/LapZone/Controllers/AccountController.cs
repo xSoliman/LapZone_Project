@@ -38,9 +38,7 @@ public class AccountController : Controller
 
         if (query != null)
         {
-          /*  HttpContext.Session.SetString("Email", user.Email);
-            FormsAuthentication.SetAuthCookie(user.Username, false);
-*/
+            HttpContext.Session.SetString("Email", user.Email);
             return RedirectToAction("Index", "Home");
         }
         else
@@ -84,8 +82,8 @@ public class AccountController : Controller
 
     public IActionResult Logout()
     {
-        HttpContext.Session.Clear();
-        return RedirectToAction("Login", "Account");
+        HttpContext.Session.Clear();    
+        return RedirectToAction("Index", "Home");
     }
 
 }

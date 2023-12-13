@@ -136,6 +136,13 @@ namespace LapZone.Migrations
                         .HasName("PK__Category__19093A2BE052224C");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 2,
+                            CategoryName = "Phones"
+                        });
                 });
 
             modelBuilder.Entity("LapZone.Models.LaptopDetail", b =>
@@ -284,8 +291,7 @@ namespace LapZone.Migrations
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("StockQuantity")
                         .HasColumnType("int");
