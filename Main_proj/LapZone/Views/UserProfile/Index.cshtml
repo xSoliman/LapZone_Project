@@ -1,0 +1,120 @@
+                                                        @* UserAccount *@
+@{
+    ViewData["Title"] = "User Account";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your User Account</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4; /* Light gray background */
+            color: #333; /* Dark gray text */
+            margin: 0;
+            padding: 0;
+        }
+
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; /* White content background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+        }
+
+        h2 {
+            color: #333; /* Dark gray heading */
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .account-button, .edit-profile-button {
+            background-color: #D10024; /* Red button background */
+            color: #fff; /* White text on buttons */
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-left: 10px;
+        }
+
+            .account-button:hover, .edit-profile-button:hover {
+                background-color: #333; /* Darker background on hover */
+                transform: scale(1.05); /* Slight scale effect on hover */
+            }
+
+        .profile-section {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #ddd; /* Light gray border */
+            border-radius: 10px;
+        }
+
+        .profile-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .profile-value {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: #D10024; /* Red section title */
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <main>
+
+        <h2>Welcome!</h2>
+
+        <div class="profile-section">
+            <h3 class="section-title">User Profile</h3>
+            <p class="profile-label"><i class="icon">&#128100;</i> Name:</p>
+            <p class="profile-value">John Doe</p>
+            <p class="profile-label"><i class="icon">&#9993;</i> Email:</p>
+            <p class="profile-value">john.doe@example.com</p>
+            <p class="profile-label"><i class="icon">&#128241;</i> Phone Number:</p>
+            <p class="profile-value">+1234567890</p>
+
+            <div class="button-container">
+                <a href="@Url.Action("Index", "Wishlist")" class="account-button"><i class="icon">&#9829;</i> Wishlist</a>
+                <a href="@Url.Action("MyOrders", "Order")" class="account-button"><i class="icon">&#128722;</i> My Orders</a>
+                <a href="@Url.Action("Addresses", "Address")" class="account-button"><i class="icon">&#128451;</i> Addresses</a>
+                <a href="@Url.Action("EditProfile", "Account")" class="edit-profile-button"><i class="icon">&#9998;</i> Edit My Profile</a>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

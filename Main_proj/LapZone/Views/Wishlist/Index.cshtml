@@ -1,0 +1,124 @@
+                                            @* Wish List *@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wish List</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wishlist-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .product {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+            .product img {
+                max-width: 100px;
+                margin-right: 20px;
+            }
+
+        .product-details {
+            flex-grow: 1;
+        }
+
+        .product button {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            .btn-container button {
+                background-color: #D10024;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+
+        button.back-button {
+            background-color: #9f0303;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="wishlist-container">
+        <h2>User Wishlist</h2>
+
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="laptop1.jpg" alt="Laptop 1">
+            <div class="product-details">
+                <h3>Laptop Model 1</h3>
+                <p>Description of the laptop goes here.</p>
+                <button onclick="removeFromWishlist(1)">Remove from Wishlist</button>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="laptop2.jpg" alt="Laptop 2">
+            <div class="product-details">
+                <h3>Laptop Model 2</h3>
+                <p>Description of the laptop goes here.</p>
+                <button onclick="removeFromWishlist(2)">Remove from Wishlist</button>
+            </div>
+        </div>
+
+        <!-- Add more products as needed -->
+
+        <div class="btn-container">
+            <button onclick="createFavoritesList()">Create Favorites List</button>
+            <button onclick="addProduct()">Add Product</button>
+            <button onclick="deleteProduct()">Delete Product</button>
+        </div>
+
+    </div>
+    <button class="back-button" onclick="backToMyAccount()">Back to My Account</button>
+
+
+
+ 
+</body>
+</html>
+

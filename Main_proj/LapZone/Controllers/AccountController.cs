@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using System;
 using System.Linq;
+using System.Dynamic;
 
 namespace LapZone.Controllers;
 
@@ -32,19 +33,22 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Login(User user)
     {
-        var query = _db.Users
+        var authentUser = _db.Users
          .Where(u => u.Email == user.Email && u.PasswordHash == user.PasswordHash)
          .FirstOrDefault();
+      
 
-        if (query != null)
+        if (authentUser != null)
         {
             HttpContext.Session.SetString("Email", user.Email);
+            HttpContext.Session.SetInt32("RoleId", authentUser.RoleId);
+
             return RedirectToAction("Index", "Home");
         }
         else
         {
             ViewData["Wrong"] = "Wrong Email or Password";
-            return View();
+            return View(user);
         }
     }
     public IActionResult Register()
@@ -82,7 +86,10 @@ public class AccountController : Controller
 
     public IActionResult Logout()
     {
-        HttpContext.Session.Clear();    
+        HttpContext.Session.Clear();
+
+        HttpContext.Session.Clear();
+
         return RedirectToAction("Index", "Home");
     }
 

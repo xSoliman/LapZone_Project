@@ -31,6 +31,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
     </style>
 </head>
 <body>
@@ -46,8 +47,8 @@
                 <th>Description</th>
                 <th>Price</th>
                 <th>Stock Quantity</th>
-                <th>Category</th>
-            </tr>
+@*                 <th>Category</th>
+ *@            </tr>
         </thead>
         <tbody>
                 
@@ -58,14 +59,14 @@
                     <td>@obj.Description for @obj.ProductName</td>
                     <td>@obj.Price</td>
                     <td>@obj.StockQuantity</td>
-                    <td>@obj    </td>
+                    @* <td>@obj</td> *@
 
                 </tr>
             }
 
         </tbody>
     </table>
-    <a asp-controller="Product" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i>Create new Product</a>
+    <a asp-controller="Product" asp-action="Create" class="btn btn-danger"><i class="bi bi-plus-circle"></i>Create new Product</a>
 
 
 </body>

@@ -1,13 +1,19 @@
-﻿@{
+﻿@* Layout *@
+@using Microsoft.EntityFrameworkCore;
 
+@{
+    int? userRoleId = Context.Session.GetInt32("RoleId");
+}
+
+@{
     string email = null;
 
     if (Context.Request.Cookies.ContainsKey(".AspNetCore.Session"))
     {
         email = Context.Session.GetString("Email");
+
     }
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,26 +60,37 @@
         <!-- TOP HEADER -->
         <div id="top-header">
             <div class="container">
-                <ul class="header-links pull-left">
-                    <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-                    <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
-                </ul>
-                <ul class="header-links pull-right">
 
-                       
 
-                    @if (string.IsNullOrEmpty(email))
+                @if (string.IsNullOrEmpty(email))
+                {
+                    <ul class="header-links pull-left">
+                        <li class="header-links pull-left"><a style="font-size: 2.3rem;" href="@Url.Action("Register", "Account")"><i class="bi bi-person-fill-up"></i>Sign Up</a></li>
+                    </ul>
+                    <ul class="header-links pull-right">
+                        <li><a style="font-size: 2.3rem" href="@Url.Action("Login", "Account")"><i class="bi bi-box-arrow-in-right"></i>Login</a></li>
+                    </ul>
+
+                }
+                else
+                {
+                    <ul class="header-links pull-right">
+                        <li><a style="font-size: 2.3rem" href="@Url.Action("Index", "UserProfile")"><i class="bi bi-person-circle"></i>My Profile</a></li>
+                    </ul>
+                    @if (userRoleId.HasValue)
                     {
-                        <li><a href="@Url.Action("Register", "Account")"> <i class="bi bi-person-fill-up"></i> Sign Up</a></li>
-                        <li><a href="@Url.Action("Login", "Account")"> <i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+                        if (userRoleId == 1)
+                        {
+                            <ul class="header-links pull-right">
+                                <li><a style="font-size: 2.3rem; padding:30px;" href="@Url.Action("Index", "Dashboard")"><i class="bi bi-graph-up"></i>Dashboard</a></li>
+                            </ul>
+                        }
                     }
-                    else
-                    {
-                        <li><a href="@Url.Action("Logout", "Account")"> <i class="bi bi-box-arrow-in-left"></i> Logout</a></li>
-                        <li><a href="@Url.Action("Index", "Home")"> <i class="bi bi-person-circle"></i> My Profile</a></li>
-                    }
-                </ul>
+    
+                    <ul class="header-links pull-left">
+                        <li><a style="font-size: 2.3rem" href="@Url.Action("Logout", "Account")"><i class="bi bi-box-arrow-in-left"></i>Logout</a></li>
+                    </ul>
+                }
             </div>
         </div>
         <!-- /TOP HEADER -->
@@ -112,7 +129,7 @@
                         <div class="header-ctn">
                             <!-- Wishlist -->
                             <div>
-                                <a href="#">
+                                <a asp-controller="Wishlist" asp-action="">
                                     <i class="fa fa-heart-o"></i>
                                     <span>Your Wishlist</span>
                                     <div class="qty">2</div>
@@ -120,46 +137,14 @@
                             </div>
                             <!-- /Wishlist -->
                             <!-- Cart -->
-                            <div class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <div>
+                                <a href="@Url.Action("Index", "Cart")">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span>Your Cart</span>
                                     <div class="qty">3</div>
                                 </a>
-                                <div class="cart-dropdown">
-                                    <div class="cart-list">
-                                        <div class="product-widget">
-                                            <div class="product-img">
-                                                <img src="./img/product01.png" alt="">
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-                                            </div>
-                                            <button class="delete"><i class="fa fa-close"></i></button>
-                                        </div>
-
-                                        <div class="product-widget">
-                                            <div class="product-img">
-                                                <img src="./img/product02.png" alt="">
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-                                            </div>
-                                            <button class="delete"><i class="fa fa-close"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="cart-summary">
-                                        <small>3 Item(s) selected</small>
-                                        <h5>SUBTOTAL: $2940.00</h5>
-                                    </div>
-                                    <div class="cart-btns">
-                                        <a href="#">View Cart</a>
-                                        <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
-                                    </div>
-                                </div>
                             </div>
+
                             <!-- /Cart -->
                             <!-- Menu Toogle -->
                             <div class="menu-toggle">
@@ -256,17 +241,9 @@
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <ul class="footer-payments">
-                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-                        </ul>
                         <span class="copyright">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | LapZone Team <i class="fa fa-heart-o" aria-hidden="true"></i></a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </span>
                     </div>

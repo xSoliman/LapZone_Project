@@ -155,15 +155,18 @@ namespace LapZone.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LaptopId"));
 
                     b.Property<string>("Brand")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("CPU")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("CPU");
 
                     b.Property<string>("GPU")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("GPU");
@@ -176,6 +179,7 @@ namespace LapZone.Migrations
                         .HasColumnName("ProductID");
 
                     b.Property<string>("RAM")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("RAM");
@@ -184,6 +188,7 @@ namespace LapZone.Migrations
                         .HasColumnType("decimal(4, 2)");
 
                     b.Property<string>("Storage")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -362,6 +367,7 @@ namespace LapZone.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PasswordHash")
+                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
@@ -371,6 +377,7 @@ namespace LapZone.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Photo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoleId")
@@ -386,6 +393,18 @@ namespace LapZone.Migrations
                         .IsUnique();
 
                     b.ToTable("_User");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 13,
+                            Email = "Admin@Admin",
+                            FullName = "Admin1",
+                            PasswordHash = "admin123",
+                            PhoneNumber = "012",
+                            Photo = "qweqwe",
+                            RoleId = 1
+                        });
                 });
 
             modelBuilder.Entity("LapZone.Models.UserRole", b =>

@@ -44,14 +44,18 @@ public partial class LapZoneContext : DbContext
     {
         modelBuilder.Entity<UserRole>().HasData(
             new UserRole {RoleId=1,RoleName = "Admin" },
-            new UserRole { RoleId=2, RoleName= "Customer"}
+            new UserRole {RoleId=2, RoleName= "Customer"}
             );
 
 		modelBuilder.Entity<Category>().HasData(
 			new Category { CategoryId = 2, CategoryName = "Phones" }
 			);
 
-		modelBuilder.Entity<Address>(entity =>
+        modelBuilder.Entity<User>().HasData(
+           new User {UserId=13,Email="Admin@Admin",PasswordHash="admin123",PhoneNumber="012",Photo="qweqwe", RoleId = 1, FullName = "Admin1" }
+           );
+
+        modelBuilder.Entity<Address>(entity =>
         {
             entity.HasKey(e => e.AddressId).HasName("PK___Address__091C2A1B6B3F29E0");
 

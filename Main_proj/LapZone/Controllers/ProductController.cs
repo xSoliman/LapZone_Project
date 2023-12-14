@@ -23,12 +23,22 @@ public class ProductController : Controller
     }
     public IActionResult Index()
     {
+
+        int? userRole = HttpContext.Session.GetInt32("RoleId");
+
+        if (userRole == null || userRole != 1)
+            return RedirectToAction("Index", "Home");
+
         List<Product> objProductList = _db.Products.ToList();
 
         return View(objProductList);
     }
     public IActionResult Create()
     {
+        int? userRole = HttpContext.Session.GetInt32("RoleId");
+
+        if (userRole == null || userRole != 1)
+            return RedirectToAction("Index", "Home");
         ViewBag.Categories = new SelectList(_db.Categories, "CategoryId", "CategoryName");
 
         return View();
