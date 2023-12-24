@@ -36,14 +36,10 @@ public partial class Product
     [InverseProperty("Products")]
     public virtual Category Category { get; set; }
 
-    [InverseProperty("Product")]
-    public virtual LaptopDetail LaptopDetail { get; set; }
 
     [InverseProperty("Product")]
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
-    [InverseProperty("Product")]
-    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 
     [InverseProperty("Product")]
     public virtual ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();

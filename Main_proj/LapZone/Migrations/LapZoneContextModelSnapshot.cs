@@ -145,66 +145,6 @@ namespace LapZone.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("LapZone.Models.LaptopDetail", b =>
-                {
-                    b.Property<int>("LaptopId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("LaptopID");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LaptopId"));
-
-                    b.Property<string>("Brand")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CPU")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("CPU");
-
-                    b.Property<string>("GPU")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("GPU");
-
-                    b.Property<bool?>("HasWebcam")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int")
-                        .HasColumnName("ProductID");
-
-                    b.Property<string>("RAM")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("RAM");
-
-                    b.Property<decimal?>("ScreenSize")
-                        .HasColumnType("decimal(4, 2)");
-
-                    b.Property<string>("Storage")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<decimal?>("Weight")
-                        .HasColumnType("decimal(5, 2)")
-                        .HasColumnName("_Weight");
-
-                    b.HasKey("LaptopId")
-                        .HasName("PK__LaptopDe__19F026A4D5C77AFB");
-
-                    b.HasIndex(new[] { "ProductId" }, "UQ__LaptopDe__B40CC6ECC4FF7DEB")
-                        .IsUnique();
-
-                    b.ToTable("LaptopDetail");
-                });
-
             modelBuilder.Entity("LapZone.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")
@@ -316,44 +256,6 @@ namespace LapZone.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("LapZone.Models.Review", b =>
-                {
-                    b.Property<int>("ReviewId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("ReviewID");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReviewId"));
-
-                    b.Property<string>("Comment")
-                        .HasColumnType("text");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int")
-                        .HasColumnName("ProductID");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ReviewDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getdate())");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int")
-                        .HasColumnName("UserID");
-
-                    b.HasKey("ReviewId")
-                        .HasName("PK__Review__74BC79AEB92B741D");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Review");
-                });
-
             modelBuilder.Entity("LapZone.Models.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -365,26 +267,22 @@ namespace LapZone.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int")
@@ -519,17 +417,6 @@ namespace LapZone.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("LapZone.Models.LaptopDetail", b =>
-                {
-                    b.HasOne("LapZone.Models.Product", "Product")
-                        .WithOne("LaptopDetail")
-                        .HasForeignKey("LapZone.Models.LaptopDetail", "ProductId")
-                        .IsRequired()
-                        .HasConstraintName("FK_Product_LaptopDetail");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("LapZone.Models.Order", b =>
                 {
                     b.HasOne("LapZone.Models.Address", "Address")
@@ -577,25 +464,6 @@ namespace LapZone.Migrations
                         .HasConstraintName("FK_Category_Product");
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("LapZone.Models.Review", b =>
-                {
-                    b.HasOne("LapZone.Models.Product", "Product")
-                        .WithMany("Reviews")
-                        .HasForeignKey("ProductId")
-                        .IsRequired()
-                        .HasConstraintName("FK_Product_Review");
-
-                    b.HasOne("LapZone.Models.User", "User")
-                        .WithMany("Reviews")
-                        .HasForeignKey("UserId")
-                        .IsRequired()
-                        .HasConstraintName("FK__User_Review");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("LapZone.Models.User", b =>
@@ -652,12 +520,7 @@ namespace LapZone.Migrations
                 {
                     b.Navigation("CartItems");
 
-                    b.Navigation("LaptopDetail")
-                        .IsRequired();
-
                     b.Navigation("OrderItems");
-
-                    b.Navigation("Reviews");
 
                     b.Navigation("Wishlists");
                 });
@@ -670,8 +533,6 @@ namespace LapZone.Migrations
                         .IsRequired();
 
                     b.Navigation("Orders");
-
-                    b.Navigation("Reviews");
 
                     b.Navigation("Wishlists");
                 });

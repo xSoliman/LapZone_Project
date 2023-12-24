@@ -11217,11 +11217,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\LapZone_Project\\Main\\Main_proj\\LapZone\\LapZone.csproj",
+      "projectUniqueName": "E:\\LapZone_Project\\Github\\LapZone_Project\\Main_proj\\LapZone\\LapZone.csproj",
       "projectName": "LapZone",
-      "projectPath": "E:\\LapZone_Project\\Main\\Main_proj\\LapZone\\LapZone.csproj",
+      "projectPath": "E:\\LapZone_Project\\Github\\LapZone_Project\\Main_proj\\LapZone\\LapZone.csproj",
       "packagesPath": "C:\\Users\\solim\\.nuget\\packages\\",
-      "outputPath": "E:\\LapZone_Project\\Main\\Main_proj\\LapZone\\obj\\",
+      "outputPath": "E:\\LapZone_Project\\Github\\LapZone_Project\\Main_proj\\LapZone\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\solim\\AppData\\Roaming\\NuGet\\NuGet.Config",

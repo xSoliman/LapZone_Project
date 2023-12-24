@@ -42,9 +42,6 @@ public partial class User
     [InverseProperty("User")]
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
-    [InverseProperty("User")]
-    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
-
     [ForeignKey("RoleId")]
     [InverseProperty("Users")]
     public virtual UserRole Role { get; set; }

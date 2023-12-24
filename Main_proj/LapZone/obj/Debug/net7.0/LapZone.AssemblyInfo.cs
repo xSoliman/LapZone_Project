@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LapZone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68ecec29f79a547139d6591c25f3b19f4c0c4d59")]
 [assembly: System.Reflection.AssemblyProductAttribute("LapZone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LapZone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

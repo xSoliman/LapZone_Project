@@ -23,7 +23,6 @@ public partial class LapZoneContext : DbContext
 
     public virtual DbSet<Category> Categories { get; set; }
 
-    public virtual DbSet<LaptopDetail> LaptopDetails { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
 
@@ -31,7 +30,6 @@ public partial class LapZoneContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
-    public virtual DbSet<Review> Reviews { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
@@ -101,14 +99,7 @@ public partial class LapZoneContext : DbContext
             entity.HasKey(e => e.CategoryId).HasName("PK__Category__19093A2BE052224C");
         });
 
-        modelBuilder.Entity<LaptopDetail>(entity =>
-        {
-            entity.HasKey(e => e.LaptopId).HasName("PK__LaptopDe__19F026A4D5C77AFB");
-
-            entity.HasOne(d => d.Product).WithOne(p => p.LaptopDetail)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Product_LaptopDetail");
-        });
+     
 
         modelBuilder.Entity<Order>(entity =>
         {
@@ -143,20 +134,7 @@ public partial class LapZoneContext : DbContext
                 .HasConstraintName("FK_Category_Product");
         });
 
-        modelBuilder.Entity<Review>(entity =>
-        {
-            entity.HasKey(e => e.ReviewId).HasName("PK__Review__74BC79AEB92B741D");
-
-            entity.Property(e => e.ReviewDate).HasDefaultValueSql("(getdate())");
-
-            entity.HasOne(d => d.Product).WithMany(p => p.Reviews)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Product_Review");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Reviews)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__User_Review");
-        });
+    
 
 
         modelBuilder.Entity<Order>(entity =>
