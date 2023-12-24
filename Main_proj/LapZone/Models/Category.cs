@@ -22,6 +22,13 @@ public partial class Category
     [Column("_Description", TypeName = "text")]
     public string Description { get; set; }
 
+    public string ImagePath { get; set; }
+
+
     [InverseProperty("Category")]
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+
+    [NotMapped]
+    public IFormFile clientFile { get; set; }
+
 }

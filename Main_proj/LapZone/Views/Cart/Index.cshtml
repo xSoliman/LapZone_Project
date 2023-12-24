@@ -1,209 +1,190 @@
-                                            @* Cart *@
+<!-- Cart -->
+@model IEnumerable<LapZone.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Index";
+
+    decimal total = 0;
+}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-
     <style>
-        .title {
-            margin-bottom: 15vh;
-            font-size: 3rem;
-        }
-
-        .cart {
-            background-color: #fff;
-            padding: 10vh 12vh;
-            border-bottom-left-radius: 2rem;
-            border-top-left-radius: 2rem;
-        }
-
-        .summary {
-            background-color: #ddd;
-            border-top-right-radius: 2rem;
-            border-bottom-right-radius: 2rem;
-            padding: 10vh;
-            color: rgb(65, 65, 65);
-        }
-
-        .row {
-            margin: 0;
-        }
-
-        .title b {
-            font-size: 3rem;
-        }
-
-        .col-2,
-        .col {
-            padding: 0 4vh;
-        }
-
-        .close {
-            margin-left: auto;
-            font-size: 1.5rem;
-        }
-
-        img {
-            width: 7rem;
-        }
-
-        .back-to-shop {
-            margin-top: 12.5rem;
-            font-size: 1.5rem;
-        }
-
-        h5 {
-            margin-top: 10vh;
-            font-size: 2rem;
-        }
-
-        hr {
-            margin-top: 5vh;
-        }
-
-        input {
-            border: 1px solid rgba(0, 0, 0, 0.137);
-            padding: 5vh 4vh;
-            
-            outline: none;
-            width: 100%;
-            background-color: rgb(247, 247, 247);
-            font-size: 1.5rem;
-        }
-
-
-
-        .btn {
-            background-color: #15161D;
-            border-color: #15161D;
+        .btn-primary-custom {
             color: white;
-            width: 100%;
-            font-size: 1.5rem;
-            margin-top: 10vh;
-            padding: 3vh;
-            border-radius: 1rem;
-        }
-        .btn:hover{
-            color:red;
-        }
-        a {
-            color: black;
-            font-size: 1.5rem;
+            background-color: #d10024;
+            border-color: #d10024;
+        
+            padding: 15px 25px; /* Adjust the padding as needed */
+            font-size: 19px;
+            margin: 40px;
         }
 
-            a:hover {
-                color: black;
-                text-decoration: none;
+            .btn-primary-custom:hover {
+                color: white;
+                background-color: #1e1f29;
+                border-color: #1e1f29;
             }
 
-        #code {
-            background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
-            background-repeat: no-repeat;
-            background-position-x: 95%;
-            background-position-y: center;
+        .error-text {
+            color: #d10024;
+            font-weight: bold;
         }
+
+        .insufficient-stock-message {
+            margin-top: 20px;
+        }
+
+        .stock-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stock-item {
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            color: #1e1f29;
+        }
+
+        .stock-limit {
+            color: #555;
+            margin-left: 10px;
+        }
+
+        .no-items-message {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            margin-top: 30px;
+        }
+
+        .delete{
+            background-color:white;
+            border:none;
+            padding:0px;
+            transition: background-color 0.2s, transform 0.2s;
+            font-size:25px;
+            margin-top:100px;
+        }
+        .delete:hover{
+        transform: scale(1.2);
+        }
+
+
+       .bi-cart-x{
+           color:#d10024;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+                
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="row">
-            <div class="col-md-8 cart">
-                <div class="title">
-                    <div class="row">
-                        <div class="col"><h4><b>Shopping Cart</b></h4></div>
-                    </div>
-                </div>
-                @* <div class="row border-top border-bottom">
-                <div class="row main align-items-center">
-                <div class="col-2"><img class="img-fluid" src="Images/product01.png"></div>
-                <div class="col">
-                <div class="row text-muted">labtop </div>
-                <div class="row">MacBook Pro</div>
-                </div>
-                <div class="col"></div>
-                <div class="col">$44.000 <span class="close">&#10005;</span></div>
-                </div>
-                </div> *@
-                <div class="row main align-items-center" style="font-size: 2rem; padding: 3vh 0; margin: 2vh 0;">
-                    <div class="col-2"><img style="width: 25rem; class="img-fluid" src="~/Images/Products/wp8897664-zephyrus-wallpapers.jpg"></div>
-                    <span class="close" style="font-size: 3rem; color: darkred;">&#10005;</span>
-                    <div class="col" style="font-size: 2rem;">
-                        <div class="row text-muted">Laptop</div>
-                        <div class="row">ASUS Laptop</div>
-                    </div>
-                    <div class="col" style="font-size: 2rem;">
-                        <span>Quantity: 1</span>
-                    </div>
-                    <div class="col" style="font-size: 2.5rem;">
-                        $36.000 
-                    </div>
-                </div>
-                <div class="row main align-items-center" style="font-size: 2rem; padding: 3vh 0; margin: 2vh 0;">
-                    <div class="col-2"><img style="width: 25rem; class="img-fluid" src="~/Images/Products/wp8897664-zephyrus-wallpapers.jpg"></div>
-                    <span class="close" style="font-size: 3rem; color: darkred;">&#10005;</span>
-                    <div class="col" style="font-size: 2rem;">
-                        <div class="row text-muted">Laptop</div>
-                        <div class="row">ASUS Laptop</div>
-                    </div>
-                    <div class="col" style="font-size: 2rem;">
-                        <span>Quantity: 1</span>
-                    </div>
-                    <div class="col" style="font-size: 2.5rem;">
-                        $36.000
-                    </div>
-                </div>
-                <div class="row main align-items-center" style="font-size: 2rem; padding: 3vh 0; margin: 2vh 0;">
-                    <div class="col-2"><img style="width: 25rem; class="img-fluid" src="~/Images/Products/wp8897664-zephyrus-wallpapers.jpg"></div>
-                    <span class="close" style="font-size: 3rem; color: darkred;">&#10005;</span>
-                    <div class="col" style="font-size: 2rem;">
-                        <div class="row text-muted">Laptop</div>
-                        <div class="row">ASUS Laptop</div>
-                    </div>
-                    <div class="col" style="font-size: 2rem;">
-                        <span>Quantity: 1</span>
-                    </div>
-                    <div class="col" style="font-size: 2.5rem;">
-                        $36.000
-                    </div>
-                </div>
-                <div class="row main align-items-center" style="font-size: 2rem; padding: 3vh 0; margin: 2vh 0;">
-                    <div class="col-2"><img style="width: 25rem; class="img-fluid" src="~/Images/Products/8-bit City_1920x1080.jpg"></div>
-                    <span class="close" style="font-size: 3rem; color: darkred;">&#10005;</span>
-                    <div class="col" style="font-size: 2rem;">
-                        <div class="row text-muted">Laptop</div>
-                        <div class="row">ASUS Laptop</div>
-                    </div>
-                    <div class="col" style="font-size: 2rem;">
-                        <span>Quantity: 1</span>
-                    </div>
-                    <div class="col" style="font-size: 2.5rem;">
-                        $36.000
-                    </div>
-                </div>
+    <div class="container mt-5">
+        @if (Model == null || !Model.Any())
+        {
+            <div style="margin-top:11rem;"></div>
 
-                <div style="font-size: 3rem"; class="back-to-shop"><a style="font-size: 4rem" ; asp-controller="ProductStore" asp-action="Index">&leftarrow;</a><span class="text-muted">Go to shop</span></div>
+            <div class="no-items-message">
+                <p style="font-size:3.2rem;">Cart is empty <i class="bi bi-cart-dash-fill"></i></p>
+                <a href="@Url.Action("Index", "ProductStore")" style="font-size:1.8rem;margin-top:20px;" class="btn btn-primary-custom ">Start shopping now!</a>
             </div>
-          <div class="col-md-4 summary" style="font-size: 1.5rem; padding: 2vh;">
-   @*  <div><h5><b>Summary</b></h5></div>
-    <hr>
+            <div style="margin-bottom:11rem;"></div>
 
-    <form style="margin-bottom: 2vh;">
-      
-        <p style="font-size: 1.5rem; margin-top: 2vh;">GIVE CODE</p>
-        <input id="code" placeholder="Enter your code" style="font-size: 1.5rem;">
-    </form> *@
-    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-        <div class="col" style="font-size: 3rem;">TOTAL PRICE</div>
-        <div class="col text-right" style="font-size: 3rem;">$120.000</div>
-    </div>
-                <form action="@Url.Action("Index", "Checkout")">
-                    <button type="submit" class="btn" style="font-size: 1.5rem;">CHECKOUT</button>
-                </form>
+        }
+        else
+        {
+            <div style="margin-top:4rem;"></div>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            @if (item.Quantity > 0)
+                            {
+                                <tr>
+                                    <th scope="row">
+                                        <div class="d-flex align-items-center">
+                                            <img src="~/Images/Products/@item.Product.ImagePath" class="img-fluid rounded-3"
+                                            style="width: 120px;" alt="Product Image">
+                                            <div class="flex-column ms-4">
+                                                <a asp-controller="ProductDetails" asp-action="Index" asp-route-id="@item.Product.ProductId" class="mb-2"><b>@item.Product.ProductName</b></a>
+                                                <p class="mb-0" style="font-weight:normal;">@item.Product.Description</p>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="align-middle">
+                                        <a asp-controller="ProductStore" asp-action="Search" asp-route-categoryId="@item.Product?.Category?.CategoryId" class="mb-0" style="font-weight: 500;margin:0px 5px;"><b>@(item.Product?.Category?.CategoryName ?? "No Category")</b></a>
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex flex-row">
+                                            <p class="mb-0" style="font-weight: 500;margin:0px 20px;">@item.Quantity</p>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <p class="mb-0" style="font-weight: 500;">@(item.Product.Price * item.Quantity) EGP</p>
+                                    </td>
+                                    @{
+                                        total += item.Product.Price * item.Quantity;
+                                    }
+                                    <td class="align-middle">
+                                        <form asp-controller="Cart" asp-action="Delete" asp-route-id="@item.CartItemId" method="post" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                            <button class="delete" type="submit"><i class="bi bi-cart-x"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
             </div>
 
+            @if (ViewBag.insufficientStockItems != null && ViewBag.insufficientStockItems.Count > 0)
+            {
+                <div class="insufficient-stock-message">
+                    <p class="error-text">Insufficient stock for the following items:</p>
+                    <ul class="stock-list">
+                        @foreach (var item in ViewBag.insufficientStockItems)
+                        {
+                            <li class="stock-item">
+                                <a asp-controller="ProductDetails" asp-action="Index" asp-route-id="@item.Product.ProductId">@item.Product.ProductName</a>
+                                <span class="stock-limit">(Stock Limit: @item.Product.StockQuantity)</span>
+
+                                <a asp-controller="Cart" asp-action="DecreaseQuantity" style="font-size:1.2rem" asp-route-id="@item.Product.ProductId"><i>Click to decrease quantity</i></a>
+
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            <form asp-controller="Order" asp-action="Index" method="post">
+                <!-- Add a hidden field to indicate the source page -->
+                <input type="hidden" name="sourcePage" value="Cart" />
+
+                <button type="submit" class="btn btn-primary-custom navbar-right">
+                    <div class="d-flex justify-content-between">
+                        <span>Checkout @total EGP</span>
+                    </div>
+                </button>
+            </form>
+        }
+        <div style="margin-top:6rem;"></div>
+
     </div>
+
 </body>
 </html>

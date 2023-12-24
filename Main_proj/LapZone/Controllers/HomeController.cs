@@ -7,12 +7,6 @@ namespace LapZone.Controllers
 {
     public class HomeController : Controller
     {
-      /*  private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }*/
         private readonly LapZoneContext _db;
         public HomeController(LapZoneContext db)
         {
@@ -21,7 +15,7 @@ namespace LapZone.Controllers
 
         public IActionResult Index()
         {
-           var sess = HttpContext.Session.GetString("Email");
+            var userId = HttpContext.Session.GetInt32("UserId");
 
             dynamic viewModel = new ExpandoObject();
 
@@ -31,11 +25,27 @@ namespace LapZone.Controllers
             var categories = _db.Categories.ToList();
             viewModel.Categories = categories;
 
-            return View(viewModel);
+            // Check if the user is logged in
+            if (userId != null)
+            {
+                var wishlistProductIds = _db.Wishlists.Where(w => w.UserId == userId).Select(w => w.ProductId).ToList();
 
+                viewModel.InWishList = wishlistProductIds;
+            }
+            else
+            {
+                viewModel.InWishList = new List<int>(); // User is not logged in, so nothing is in the wishlist
+            }
+
+            return View(viewModel);
         }
-       
+
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult TermsAndConditions()
         {
             return View();
         }

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -17,29 +16,19 @@ public partial class User
     [Column("UserID")]
     public int UserId { get; set; }
 
-    [StringLength(100)]
-    [Required(ErrorMessage = "First name is required.")]
-    [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "First name should only contain letters and spaces.")]
     public string FullName { get; set; }
-
-    [StringLength(100)]
-    [Required(ErrorMessage = "Email is required.")]
-    [MaxLength(255)]
-    [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Please Enter Valid E-mail")]
 
     public string Email { get; set; }
 
-    [StringLength(255)]
-    [MaxLength(255)]
-    [MinLength(8, ErrorMessage = "Password must be at least 8 characters long")]
+
+
     public string PasswordHash { get; set; }
 
-    [StringLength(20)]
     [Required(ErrorMessage = "Phone is required.")]
 
     public string PhoneNumber { get; set; }
 
-    public string Photo { get; set; }
+    public string? ImagePath { get; set; }
 
     [Column("RoleID")]
     [DefaultValue(2)]
@@ -48,8 +37,7 @@ public partial class User
     [InverseProperty("User")]
     public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
 
-    [InverseProperty("User")]
-    public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
+    public virtual Cart Cart { get; set; }
 
     [InverseProperty("User")]
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
@@ -63,4 +51,8 @@ public partial class User
 
     [InverseProperty("User")]
     public virtual ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
+
+    [NotMapped]
+    public IFormFile? clientFile { get; set; }
+
 }

@@ -9,103 +9,151 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LapZone
 build_property.RootNamespace = LapZone
-build_property.ProjectDir = E:\LapZone_Project\Github\LapZone_Project\Main_proj\LapZone\
+build_property.ProjectDir = E:\LapZone_Project\Main\Main_proj\LapZone\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\LapZone_Project\Github\LapZone_Project\Main_proj\LapZone
+build_property.MSBuildProjectDirectory = E:\LapZone_Project\Main\Main_proj\LapZone
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Account/Login.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Account/Register.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Cart/Index.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Addresses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Addresses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Addresses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Checkout/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Dashboard/Index.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Category/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Home/Index.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Home/Privacy.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/LaptopDetails/AddDetails.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Home/TermsAndConditions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtc0FuZENvbmRpdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/LaptopDetails/AddDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFwdG9wRGV0YWlsc1xBZGREZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/LaptopDetails/Index.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/LaptopDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFwdG9wRGV0YWlsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/ProductDetails/Index.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Order/ThankYou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcVGhhbmtZb3UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/ProductDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/ProductStore/Index.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/ProductDetails/ProductNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbHNcUHJvZHVjdE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/ProductStore/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFN0b3JlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Product/Create.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Product/Index.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Shared/Error.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Shared/_LoginPartial.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/UserProfile/Index.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/UserProfile/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/UserProfile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/UserProfile/Orders.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcT3JkZXJzLmNzaHRtbA==
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/UserProfile/OrderDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcT3JkZXJEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/UserProfile/Profile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcUHJvZmlsZS5jc2h0bWw=
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/UserProfile/OrdersHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcT3JkZXJzSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Wishlist/Index.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/UserProfile/UpdateProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcVXBkYXRlUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Wishlist/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/_ViewImports.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/_ViewStart.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/LapZone_Project/Github/LapZone_Project/Main_proj/LapZone/Views/Shared/_Layout.cshtml]
+[E:/LapZone_Project/Main/Main_proj/LapZone/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-kockohtuiz

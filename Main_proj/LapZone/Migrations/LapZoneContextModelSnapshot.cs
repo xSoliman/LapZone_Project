@@ -37,18 +37,21 @@ namespace LapZone.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Country")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Governorate")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int")
                         .HasColumnName("UserID");
 
@@ -57,7 +60,7 @@ namespace LapZone.Migrations
 
                     b.HasIndex(new[] { "UserId", "Country", "Governorate", "City", "AddressLine" }, "UQ_User_Address")
                         .IsUnique()
-                        .HasFilter("[Country] IS NOT NULL AND [Governorate] IS NOT NULL AND [City] IS NOT NULL");
+                        .HasFilter("[UserID] IS NOT NULL");
 
                     b.ToTable("_Address");
                 });
@@ -78,7 +81,8 @@ namespace LapZone.Migrations
                     b.HasKey("CartId")
                         .HasName("PK__Cart__51BCD79729848FB3");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Cart");
                 });
@@ -132,17 +136,13 @@ namespace LapZone.Migrations
                         .HasColumnType("text")
                         .HasColumnName("_Description");
 
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("CategoryId")
                         .HasName("PK__Category__19093A2BE052224C");
 
                     b.ToTable("Category");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = 2,
-                            CategoryName = "Phones"
-                        });
                 });
 
             modelBuilder.Entity("LapZone.Models.LaptopDetail", b =>
@@ -214,6 +214,10 @@ namespace LapZone.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
 
+                    b.Property<int>("AddressId")
+                        .HasColumnType("int")
+                        .HasColumnName("AddressID");
+
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
@@ -228,6 +232,8 @@ namespace LapZone.Migrations
 
                     b.HasKey("OrderId")
                         .HasName("PK___Order__C3905BAF0DB0B467");
+
+                    b.HasIndex("AddressId");
 
                     b.HasIndex("UserId");
 
@@ -277,7 +283,8 @@ namespace LapZone.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
 
-                    b.Property<int>("CategoryId")
+                    b.Property<int?>("CategoryId")
+                        .IsRequired()
                         .HasColumnType("int")
                         .HasColumnName("CategoryID");
 
@@ -366,6 +373,9 @@ namespace LapZone.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -375,10 +385,6 @@ namespace LapZone.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Photo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int")
@@ -397,12 +403,12 @@ namespace LapZone.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = 13,
-                            Email = "Admin@Admin",
-                            FullName = "Admin1",
-                            PasswordHash = "admin123",
-                            PhoneNumber = "012",
-                            Photo = "qweqwe",
+                            UserId = 1,
+                            Email = "owner@owner.com",
+                            FullName = "The Owner",
+                            ImagePath = "Owner.png",
+                            PasswordHash = "1305485a712608fdc4d2fd1780c72919f2f54cf288525814bff7120737f6ddad",
+                            PhoneNumber = "01284101351",
                             RoleId = 1
                         });
                 });
@@ -430,11 +436,16 @@ namespace LapZone.Migrations
                         new
                         {
                             RoleId = 1,
-                            RoleName = "Admin"
+                            RoleName = "Owner"
                         },
                         new
                         {
                             RoleId = 2,
+                            RoleName = "Admin"
+                        },
+                        new
+                        {
+                            RoleId = 3,
                             RoleName = "Customer"
                         });
                 });
@@ -481,8 +492,8 @@ namespace LapZone.Migrations
             modelBuilder.Entity("LapZone.Models.Cart", b =>
                 {
                     b.HasOne("LapZone.Models.User", "User")
-                        .WithMany("Carts")
-                        .HasForeignKey("UserId")
+                        .WithOne("Cart")
+                        .HasForeignKey("LapZone.Models.Cart", "UserId")
                         .IsRequired()
                         .HasConstraintName("FK__User_Cart");
 
@@ -521,11 +532,19 @@ namespace LapZone.Migrations
 
             modelBuilder.Entity("LapZone.Models.Order", b =>
                 {
+                    b.HasOne("LapZone.Models.Address", "Address")
+                        .WithMany("Orders")
+                        .HasForeignKey("AddressId")
+                        .IsRequired()
+                        .HasConstraintName("FK_Order_Address");
+
                     b.HasOne("LapZone.Models.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .IsRequired()
                         .HasConstraintName("FK__User_Order");
+
+                    b.Navigation("Address");
 
                     b.Navigation("User");
                 });
@@ -609,6 +628,11 @@ namespace LapZone.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("LapZone.Models.Address", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("LapZone.Models.Cart", b =>
                 {
                     b.Navigation("CartItems");
@@ -642,7 +666,8 @@ namespace LapZone.Migrations
                 {
                     b.Navigation("Addresses");
 
-                    b.Navigation("Carts");
+                    b.Navigation("Cart")
+                        .IsRequired();
 
                     b.Navigation("Orders");
 

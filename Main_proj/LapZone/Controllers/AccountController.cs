@@ -1,23 +1,20 @@
 ﻿using LapZone.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using System;
-using System.Linq;
-using System.Dynamic;
+using System.Security.Cryptography;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
+using System.Text;
 
 namespace LapZone.Controllers;
 
 public class AccountController : Controller
 {
     private readonly LapZoneContext _db;
-    public AccountController(LapZoneContext db)
+    private readonly IHostingEnvironment _host;
+
+    public AccountController(LapZoneContext db, IHostingEnvironment host)
     {
         _db = db;
+        _host = host;
 
     }
     public IActionResult Index()
@@ -27,20 +24,23 @@ public class AccountController : Controller
 
     public IActionResult Login()
     {
+        HttpContext.Session.Clear();
+
         return View();
     }
 
     [HttpPost]
     public IActionResult Login(User user)
     {
-        var authentUser = _db.Users
-         .Where(u => u.Email == user.Email && u.PasswordHash == user.PasswordHash)
-         .FirstOrDefault();
-      
+        HttpContext.Session.Clear();
 
-        if (authentUser != null)
+        var authentUser = _db.Users
+            .Where(u => u.Email == user.Email)
+            .FirstOrDefault();
+
+        if (authentUser != null && authentUser.PasswordHash == HashPassword(user.PasswordHash))
         {
-            HttpContext.Session.SetString("Email", user.Email);
+            HttpContext.Session.SetInt32("UserId", authentUser.UserId); 
             HttpContext.Session.SetInt32("RoleId", authentUser.RoleId);
 
             return RedirectToAction("Index", "Home");
@@ -52,7 +52,10 @@ public class AccountController : Controller
         }
     }
     public IActionResult Register()
+
     {
+        HttpContext.Session.Clear();
+
         return View(new User());
     }
 
@@ -60,11 +63,13 @@ public class AccountController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Register(User user)
     {
+        HttpContext.Session.Clear();
+
         if (string.IsNullOrEmpty(user.FullName)
-    || string.IsNullOrEmpty(user.Email)
-    || string.IsNullOrEmpty(user.PasswordHash)
-    || string.IsNullOrEmpty(user.PhoneNumber)
-    || string.IsNullOrEmpty(user.Photo))
+            || string.IsNullOrEmpty(user.Email)
+            || string.IsNullOrEmpty(user.PasswordHash)
+            || string.IsNullOrEmpty(user.PhoneNumber)
+        )
         {
             ModelState.AddModelError("", "All fields are required.");
             return View(user);
@@ -76,6 +81,22 @@ public class AccountController : Controller
             ModelState.AddModelError("Email", "Email is already exists");
             return View();
         }
+
+        user.PasswordHash = HashPassword(user.PasswordHash);
+
+        string fileName = string.Empty;
+        if (user.clientFile != null)
+        {
+            string upload = Path.Combine(_host.WebRootPath, "Images/Users");
+
+            // Generate a unique file name 
+            string uniqueFileName = $"{Guid.NewGuid().ToString()}-{DateTime.Now.Ticks}-{user.clientFile.FileName}";
+            string fullPath = Path.Combine(upload, uniqueFileName);
+
+            user.clientFile.CopyTo(new FileStream(fullPath, FileMode.Create));
+            user.ImagePath = uniqueFileName;
+        }
+
         user.RoleId = 2;
         _db.Users.Add(user);
         _db.SaveChanges();
@@ -88,9 +109,16 @@ public class AccountController : Controller
     {
         HttpContext.Session.Clear();
 
-        HttpContext.Session.Clear();
 
         return RedirectToAction("Index", "Home");
+    }
+    private string HashPassword(string password)
+    {
+        using (var sha256 = SHA256.Create())
+        {
+            var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+            return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+        }
     }
 
 }

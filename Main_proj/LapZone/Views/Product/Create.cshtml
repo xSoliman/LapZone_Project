@@ -64,13 +64,13 @@
         <input asp-for="Description" type="text" class="form-control" />
 
         <input type="file" asp-for="clientFile" onchange="loadFile(event)" />
-        <img id="myImg" height="200" />
 
         <button type="submit" class="btn btn-danger">Save</button>
 
         <a asp-action="Index" asp-controller="Product" class="btn btn-secondary" style="width:150px">
             Back to items
         </a>
+        <img id="myImg" height="200" />
 
     </form>
     @section Scripts {

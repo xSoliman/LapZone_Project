@@ -1,20 +1,16 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-/*         body {
-            background-color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        } */
+      
 
         .main-container {
-            margin: 50px auto;
+            margin: 100px auto ;
             max-width: 600px;
             padding: 30px;
             border-radius: 10px;
@@ -49,12 +45,12 @@
         .btn-primary {
             background-color: #d10024;
             color: #fff;
-            border: 2px solid #c0392b;
+            /* border: 2px solid #c0392b; */
         }
-/* 
+
             .btn-primary:hover {
-                background-color: darkgr;
-            } */
+                background-color: #1e1f29;
+            }
     </style>
 </head>
 <body>
@@ -64,11 +60,12 @@
         </div>
 
         <div class="btn-container">
-            <a href="#" class="btn btn-primary">Users</a>
-            <a href="#" class="btn btn-primary">Categories</a>
+            <a asp-controller="Category" asp-action="Index" class="btn btn-primary">Categories</a>
             <a asp-controller="Product" asp-action="Index" class="btn btn-primary">Products</a>
-            <a href="#" class="btn btn-primary">Admins</a>
+            <a href="#" class="btn btn-primary">Orders</a>
             <a href="#" class="btn btn-primary">Reports</a>
+            <a href="#" class="btn btn-primary">Users</a>
+            <a href="#" class="btn btn-primary">Admins</a>
         </div>
     </div>
 </body>

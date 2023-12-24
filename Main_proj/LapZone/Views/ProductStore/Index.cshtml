@@ -1,42 +1,90 @@
-﻿                                                     @* Store *@
+﻿@* Store *@
 
 @model dynamic
+@{
+    int? userId = null;
+
+    if (Context.Request.Cookies.ContainsKey(".AspNetCore.Session"))
+    {
+        userId = Context.Session.GetInt32("UserId");
+
+    }
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <title>Store</title>
+    <style>
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+        .filterAndSort {
+            background-color: #1e1f29;
+            border: none;
+            font-weight: 500;
+            color: #fff;
+            border-radius: 4px;
+            position: absolute;
+            padding: 8px;
+            top: -15px;
+            right: 70px;
+        }
 
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" />
+            .filterAndSort:hover {
+                background-color: #d10024;
+            }
 
-    <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="~/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="~/css/slick-theme.css" />
 
-    <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="~/css/nouislider.min.css" />
+        label.checkbox-container {
+            display: inline-block;
+            position: relative;
+            margin-left:63px;
+            padding-left: 18px; /* Adjust this value to control the checkbox's size */
+            cursor: pointer;
+        }
 
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+            /* Style the checkbox itself */
+            label.checkbox-container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
 
-    <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
+            /* Style the checkmark */
+            label.checkbox-container span.checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 14px; /* Adjust this value to control the checkbox's size */
+                width: 14px; /* Adjust this value to control the checkbox's size */
+                background-color: #fff; /* Background color when not checked */
+                border: 2px solid #E4E7ED;
+            }
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+            /* Style the checkmark when checked */
+            label.checkbox-container input:checked + span.checkmark {
+                background-color: #d10024; /* Background color when checked */
+                border: 1px solid #d10024; /* Border color when checked */
+            }
 
+            /* Style the checkmark shape */
+            label.checkbox-container span.checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            /* Style the checkmark shape when checked */
+            label.checkbox-container input:checked + span.checkmark:after {
+                display: block;
+                left: 5px; /* Adjust this value to control the position of the checkmark */
+                top: 1px; /* Adjust this value to control the position of the checkmark */
+                width: 5px; /* Adjust this value to control the size of the checkmark */
+                height: 10px; /* Adjust this value to control the size of the checkmark */
+                border: solid white;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+
+    </style>
 </head>
 <body>
     <!-- SECTION -->
@@ -47,197 +95,69 @@
             <div class="row">
                 <!-- ASIDE -->
                 <div id="aside" class="col-md-3">
-                    <!-- aside Widget -->
-                    <div class="aside">
-                        <h3 class="aside-title">Categories</h3>
-                        <div class="checkbox-filter">
 
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="Laptops">
-                                <label for="category-1">
-                                    <span></span>
-                                    Laptops
-                                    <small>(120)</small>
+                    <form method="get" action="@Url.Action("FilterAndSort", "ProductStore")">
+                        <!-- store top filter -->
+                        <div class="store-filter clearfix">
+                            <div style="margin-top:2rem;" class="store-sort">
+                                <label>
+                                    <b>
+                                        Sort By:
+                                    </b>
+                                    <select name="sortBy" class="input-select">
+                                        <option value="0">Popular</option>
+                                        <option value="1">Price</option>
+                                        <option value="2">Name</option>
+                                    </select>
                                 </label>
-                            </div>
-
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="category-2">
-                                <label for="category-2">
-                                    <span></span>
-                                    Smartphones
-                                    <small>(740)</small>
-                                </label>
-                            </div>
-
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="category-3">
-                                <label for="category-3">
-                                    <span></span>
-                                    Cameras
-                                    <small>(1450)</small>
-                                </label>
-                            </div>
-
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="category-4">
-                                <label for="category-4">
-                                    <span></span>
-                                    Accessories
-                                    <small>(578)</small>
-                                </label>
-                            </div>
-
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="category-5">
-                                <label for="category-5">
-                                    <span></span>
-                                    Laptops
-                                    <small>(120)</small>
-                                </label>
-                            </div>
-
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="category-6">
-                                <label for="category-6">
-                                    <span></span>
-                                    Smartphones
-                                    <small>(740)</small>
+                                <label class="checkbox-container">
+                                    <sub>Low to high</sub> <i class="bi bi-arrow-up"></i>
+                                    <input type="checkbox" name="sortAsc" value="true">
+                                    <span class="checkmark"></span>
                                 </label>
                             </div>
                         </div>
-                    </div>
-                    <!-- /aside Widget -->
-                    <!-- aside Widget -->
-                    <div class="aside">
-                        <h3 class="aside-title">Price</h3>
-                        <div class="price-filter">
-                            <div id="price-slider"></div>
-                            <div class="input-number price-min">
-                                <input id="price-min" type="number">
-                                <span class="qty-up">+</span>
-                                <span class="qty-down">-</span>
+                        <!-- /store top filter -->
+                        <div class="aside">
+                            <h3 style="margin-bottom:5px;margin-top:30px;" class="aside-title">Price</h3>
+                            <div class="price-filter">
+                                <div class="price-slider-container">
+                                    <div class="input-number price-min">
+                                        <input name="minprice" id="new-price-min" type="number" placeholder="Min">
+                                    </div>
+                                    <span>:</span>
+                                    <div class="input-number price-max">
+                                        <input name="maxprice" id="new-price-max" type="number" placeholder="Max" max="<!-- Maximum Product Price -->">
+                                    </div>
+                                </div>
                             </div>
-                            <span>-</span>
-                            <div class="input-number price-max">
-                                <input id="price-max" type="number">
-                                <span class="qty-up">+</span>
-                                <span class="qty-down">-</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /aside Widget -->
-                    <!-- aside Widget -->
-                    <div class="aside">
-                        <h3 class="aside-title">Brand</h3>
-                        <div class="checkbox-filter">
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-1">
-                                <label for="brand-1">
-                                    <span></span>
-                                    SAMSUNG
-                                    <small>(578)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-2">
-                                <label for="brand-2">
-                                    <span></span>
-                                    LG
-                                    <small>(125)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-3">
-                                <label for="brand-3">
-                                    <span></span>
-                                    SONY
-                                    <small>(755)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-4">
-                                <label for="brand-4">
-                                    <span></span>
-                                    SAMSUNG
-                                    <small>(578)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-5">
-                                <label for="brand-5">
-                                    <span></span>
-                                    LG
-                                    <small>(125)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-6">
-                                <label for="brand-6">
-                                    <span></span>
-                                    SONY
-                                    <small>(755)</small>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /aside Widget -->
-                    <!-- aside Widget -->
-                    <div class="aside">
-                        @* <h3 class="aside-title">Top selling</h3>
-                        <div class="product-widget">
-                        <div class="product-img">
-                        <img src="~/img/product01.png" alt="">
-                        </div>
-                        <div class="product-body">
-                        <p class="product-category">Category</p>
-                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                        </div>
                         </div>
 
-                        <div class="product-widget">
-                        <div class="product-img">
-                        <img src="~/img/product02.png" alt="">
+                        <!-- /aside Widget -->
+                        <!-- aside Widget -->
+                        <div class="aside">
+                            <h3 class="aside-title">Categories</h3>
+                            <div class="checkbox-filter">
+                                @foreach (var cat in Model.Categories)
+                                {
+                                    <div class="input-checkbox">
+                                        <input type="checkbox" id="category-@cat.CategoryId" name="categoriesId" class="category-checkbox" data-category="@cat.CategoryName" value="@cat.CategoryId">
+                                        <label for="category-@cat.CategoryId">
+                                            <span></span>
+                                            @cat.CategoryName
+                                            <small>(@cat.Products.Count) products</small>
+                                        </label>
+                                    </div>
+                                }
+                            </div>
                         </div>
-                        <div class="product-body">
-                        <p class="product-category">Category</p>
-                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                        </div>
-                        </div> *@
-
-                        @* <div class="product-widget">
-                        <div class="product-img">
-                        <img src="~/img/product03.png" alt="">
-                        </div>
-                        <div class="product-body">
-                        <p class="product-category">Category</p>
-                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                        </div>
-                        </div> *@
-                    </div>
-                    <!-- /aside Widget -->
+                        <!-- /aside Widget -->
+                        <button type="submit" class="filterAndSort">Click to Apply filters and sort</button>
+                    </form>
                 </div>
                 <!-- /ASIDE -->
                 <!-- STORE -->
                 <div id="store" class="col-md-9">
-                    <!-- store top filter -->
-                    <div class="store-filter clearfix">
-                        <div class="store-sort">
-                            <label>
-                                Sort By:
-                                <select class="input-select">
-                                    <option value="0">Popular</option>
-                                    <option value="1">Price</option>
-                                </select>
-                            </label>
-
-                        </div>
-
-                    </div>
-                    <!-- /store top filter -->
                     <!-- store products -->
                     <h2></h2>
 
@@ -247,9 +167,7 @@
                             <div class="product">
                                 <div class="product-img">
                                     <img src="~/Images/Products/@product.ImagePath" alt="" />
-                                    <div class="product-label">
-                                        <span class="new">NEW</span>
-                                    </div>
+
                                 </div>
                                 <div class="product-body">
                                     <p class="product-category">@product.Category.CategoryName</p>
@@ -258,255 +176,55 @@
                                         <a asp-controller="ProductDetails" asp-action="Index" asp-route-id="@product.ProductId">@product.ProductName</a>
                                     </h3>
                                     <h4 class="product-price">@product.Price</h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="product-btns">
-                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                        <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                        <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                    </div>
+
+                                    @if (!Model.InWishList.Contains(product.ProductId))
+                                    {
+                                        <!-- Product is not in the wishlist -->
+                                        <form id="addToWishlistForm_@product.ProductId" asp-controller="Wishlist" asp-action="AddToWishlist" method="post">
+                                            <input type="hidden" name="productId" value="@product.ProductId" />
+                                            <input type="hidden" name="sourcePage" value="Store" />
+
+                                            <div class="product-btns">
+                                                <button type="button" class="add-to-wishlist" onclick="toggleWishlist(@product.ProductId, false)">
+                                                    <i class="fa fa-heart-o"></i><span class="tooltipp">Add to wishlist</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <!-- Product is in the wishlist -->
+                                        <form id="removeFromWishlistForm_@product.ProductId" asp-controller="Wishlist" asp-action="RemoveFromWishlist" method="post">
+                                            <input type="hidden" name="productId" value="@product.ProductId" />
+                                            <input type="hidden" name="sourcePage" value="Store" />
+
+                                            <div class="product-btns">
+                                                <button type="button" class="add-to-wishlist" onclick="toggleWishlist(@product.ProductId, true)">
+                                                    <i style="color:#d10024" class="fa fa-heart"></i><span class="tooltipp">Remove from wishlist</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    }
                                 </div>
-                                <div class="add-to-cart">
-                                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                </div>
+                                @if (product.StockQuantity > 0)
+                                {
+                                    <form asp-controller="Cart" asp-action="AddToCart" method="post" onsubmit="return addToCart(event)">
+                                        <input type="hidden" name="productId" value="@product.ProductId" />
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                                        </div>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <div class="add-to-cart">
+                                        <i style="color:white">out of stock <i class="bi bi-emoji-frown"></i></i>
+                                    </div>
+                                }
                             </div>
                         </div>
                     }
-                    <!-- /product -->
-                    @* <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                    <div class="product">
-                    <div class="product-img">
-                    <img src="~/img/product02.png" alt="">
-                    <div class="product-label">
-                    <span class="new">NEW</span>
-                    </div>
-                    </div>
-                    <div class="product-body">
-                    <p class="product-category">Category</p>
-                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                    <div class="product-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="product-btns">
-                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                    </div>
-                    </div>
-                    <div class="add-to-cart">
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                    </div>
-                    </div>
-                    </div>
-                    <!-- /product -->
 
-                    <div class="clearfix visible-sm visible-xs"></div>
-
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                    <div class="product">
-                    <div class="product-img">
-                    <img src="~/img/product03.png" alt="">
-                    </div>
-                    <div class="product-body">
-                    <p class="product-category">Category</p>
-                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                    <div class="product-rating">
-                    </div>
-                    <div class="product-btns">
-                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                    </div>
-                    </div>
-                    <div class="add-to-cart">
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                    </div>
-                    </div>
-                    </div>
-                    <!-- /product -->
-
-                    <div class="clearfix visible-lg visible-md"></div>
-
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                    <div class="product">
-                    <div class="product-img">
-                    <img src="~/img/product04.png" alt="">
-                    </div>
-                    <div class="product-body">
-                    <p class="product-category">Category</p>
-                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                    <div class="product-rating">
-                    </div>
-                    <div class="product-btns">
-                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                    </div>
-                    </div>
-                    <div class="add-to-cart">
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                    </div>
-                    </div>
-                    </div>
-                    <!-- /product -->
-
-                    <div class="clearfix visible-sm visible-xs"></div>
-
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                    <div class="product">
-                    <div class="product-img">
-                    <img src="~/img/product05.png" alt="">
-                    </div>
-                    <div class="product-body">
-                    <p class="product-category">Category</p>
-                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                    <div class="product-rating">
-                    </div>
-                    <div class="product-btns">
-                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                    </div>
-                    </div>
-                    <div class="add-to-cart">
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                    </div>
-                    </div>
-                    </div>
-                    <!-- /product -->
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                    <div class="product">
-                    <div class="product-img">
-                    <img src="~/img/product06.png" alt="">
-                    </div>
-                    <div class="product-body">
-                    <p class="product-category">Category</p>
-                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                    <div class="product-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="product-btns">
-                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                    </div>
-                    </div>
-                    <div class="add-to-cart">
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                    </div>
-                    </div>
-                    </div>
-                    <!-- /product -->
-
-                    <div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>
-
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                    <div class="product">
-                    <div class="product-img">
-                    <img src="~/img/product07.png" alt="">
-                    </div>
-                    <div class="product-body">
-                    <p class="product-category">Category</p>
-                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                    <div class="product-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    </div>
-                    <div class="product-btns">
-                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                    </div>
-                    </div>
-                    <div class="add-to-cart">
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                    </div>
-                    </div>
-                    </div>
-                    <!-- /product -->
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                    <div class="product">
-                    <div class="product-img">
-                    <img src="~/img/product08.png" alt="">
-                    </div>
-                    <div class="product-body">
-                    <p class="product-category">Category</p>
-                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                    <div class="product-rating">
-                    </div>
-                    <div class="product-btns">
-                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                    </div>
-                    </div>
-                    <div class="add-to-cart">
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                    </div>
-                    </div>
-                    </div>
-                    <!-- /product -->
-
-                    <div class="clearfix visible-sm visible-xs"></div>
-
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                    <div class="product">
-                    <div class="product-img">
-                    <img src="~/img/product09.png" alt="">
-                    </div>
-                    <div class="product-body">
-                    <p class="product-category">Category</p>
-                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                    <div class="product-rating">
-                    </div>
-                    <div class="product-btns">
-                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                    </div>
-                    </div>
-                    <div class="add-to-cart">
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                    </div>
-                    </div>
-                    </div>
-                    <!-- /product -->
-                    </div> *@
-                    <!-- /store products -->
-                    <!-- store bottom filter -->
-                    <!-- /store bottom filter -->
                 </div>
                 <!-- /STORE -->
             </div>
@@ -515,7 +233,40 @@
         <!-- /container -->
     </div>
     <!-- /SECTION -->
+    <script>
 
+        function toggleWishlist(productId, isInWishlist) {
+            var isAuthenticated = @(userId != null ? "true" : "false");
+
+            if (!isAuthenticated) {
+                alert('Please login first.');
+                event.preventDefault(); // Prevent the form submission
+                return;
+            }
+
+            if (isInWishlist) {
+                // Product is in the wishlist, remove it
+                document.getElementById('removeFromWishlistForm_' + productId).submit();
+            } else {
+                // Product is not in the wishlist, add it
+                document.getElementById('addToWishlistForm_' + productId).submit();
+            }
+        }
+
+
+        function addToCart(event) {
+            // Check if the user is authenticated
+            var isAuthenticated = @(userId != null ? "true" : "false");
+
+            if (!isAuthenticated) {
+                alert('Please login first.');
+                event.preventDefault(); // Prevent the form submission
+                return false; // Prevent form submission
+            }
+            return true;
+        }
+
+    </script>
 
 </body>
 </html>

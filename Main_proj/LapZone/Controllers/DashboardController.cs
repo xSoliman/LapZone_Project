@@ -10,8 +10,9 @@ namespace LapZone.Controllers
 
             if (userRole == null || userRole != 1)
                 return RedirectToAction("Index", "Home");
-           
-            return View();
+
+            return View(); // Return without a model
         }
     }
 }
+
