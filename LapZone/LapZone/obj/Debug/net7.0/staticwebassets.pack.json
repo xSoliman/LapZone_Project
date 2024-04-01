@@ -1,0 +1,573 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\LapZone.bundle.scp.css",
+      "PackagePath": "staticwebassets\\LapZone.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Categories\\photo_2023-12-26_12-57-24.jpg",
+      "PackagePath": "staticwebassets\\Images\\Categories\\photo_2023-12-26_12-57-24.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Categories\\photo_2023-12-26_12-57-45.jpg",
+      "PackagePath": "staticwebassets\\Images\\Categories\\photo_2023-12-26_12-57-45.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Categories\\photo_2023-12-26_12-58-00.jpg",
+      "PackagePath": "staticwebassets\\Images\\Categories\\photo_2023-12-26_12-58-00.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Categories\\photo_2023-12-26_12-58-23.jpg",
+      "PackagePath": "staticwebassets\\Images\\Categories\\photo_2023-12-26_12-58-23.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Categories\\photo_2023-12-26_12-58-40.jpg",
+      "PackagePath": "staticwebassets\\Images\\Categories\\photo_2023-12-26_12-58-40.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Products\\34ab1cf0-ac5c-437f-a074-a966fb16cc98-638391927883228975-photo_2023-12-26_12-58-14.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\34ab1cf0-ac5c-437f-a074-a966fb16cc98-638391927883228975-photo_2023-12-26_12-58-14.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Products\\d4b242c6-2acd-45bc-b1c6-7d9c22ae1548-638391927512607496-photo_2023-12-26_12-58-32.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\d4b242c6-2acd-45bc-b1c6-7d9c22ae1548-638391927512607496-photo_2023-12-26_12-58-32.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Products\\dbf8adce-facd-4f9e-99ed-bfda8ae6f5e5-638391921708094920-ROG Strix 2019_1920x1080.png",
+      "PackagePath": "staticwebassets\\Images\\Products\\dbf8adce-facd-4f9e-99ed-bfda8ae6f5e5-638391921708094920-ROG Strix 2019_1920x1080.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Users\\7245ff5a-55b0-41c7-80c8-4884f7ca4a12-638391521773722698-_629e79e4-2ecc-46e1-be70-77d185b703a4.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Users\\7245ff5a-55b0-41c7-80c8-4884f7ca4a12-638391521773722698-_629e79e4-2ecc-46e1-be70-77d185b703a4.jpeg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Users\\73a2a01d-8a6d-4bf3-b057-2a49b774c8cc-638391936780141872-_629e79e4-2ecc-46e1-be70-77d185b703a4.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Users\\73a2a01d-8a6d-4bf3-b057-2a49b774c8cc-638391936780141872-_629e79e4-2ecc-46e1-be70-77d185b703a4.jpeg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Users\\98ceaf31-d4c8-426f-9e3f-3e07ba7abf44-638391522173298753-_629e79e4-2ecc-46e1-be70-77d185b703a4.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Users\\98ceaf31-d4c8-426f-9e3f-3e07ba7abf44-638391522173298753-_629e79e4-2ecc-46e1-be70-77d185b703a4.jpeg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Users\\c9b4da81-c3e2-4bc0-8c4b-03cbae700cae-638391915785099957-Stealth_1920x1080.jpg",
+      "PackagePath": "staticwebassets\\Images\\Users\\c9b4da81-c3e2-4bc0-8c4b-03cbae700cae-638391915785099957-Stealth_1920x1080.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Users\\dcc4dd67-7030-4bf3-945e-588fa188d2c8-638391534698893796-_629e79e4-2ecc-46e1-be70-77d185b703a4.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Users\\dcc4dd67-7030-4bf3-945e-588fa188d2c8-638391534698893796-_629e79e4-2ecc-46e1-be70-77d185b703a4.jpeg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Users\\dde2ffb3-6c0b-4c0d-8716-03074a2b2d6b-638391919550192948-Zephyrus S 15_1920x1080.jpg",
+      "PackagePath": "staticwebassets\\Images\\Users\\dde2ffb3-6c0b-4c0d-8716-03074a2b2d6b-638391919550192948-Zephyrus S 15_1920x1080.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Users\\default-1698ee90-12f7-41a8-9a87-f0620cd43981-638391535228118803.jpg",
+      "PackagePath": "staticwebassets\\Images\\Users\\default-1698ee90-12f7-41a8-9a87-f0620cd43981-638391535228118803.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Users\\default.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\default.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\Images\\Users\\f12b850e-0171-4856-b0d2-ca4457a01bd3-638391931666404687-photo_2023-12-26_12-58-40.jpg",
+      "PackagePath": "staticwebassets\\Images\\Users\\f12b850e-0171-4856-b0d2-ca4457a01bd3-638391931666404687-photo_2023-12-26_12-58-40.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\New Text Document.txt",
+      "PackagePath": "staticwebassets\\New Text Document.txt"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\css\\logo.css",
+      "PackagePath": "staticwebassets\\css\\logo.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\css\\nouislider.min.css",
+      "PackagePath": "staticwebassets\\css\\nouislider.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\css\\slick-theme.css",
+      "PackagePath": "staticwebassets\\css\\slick-theme.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\css\\slick.css",
+      "PackagePath": "staticwebassets\\css\\slick.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\fonts\\slick.eot"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\fonts\\slick.svg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\fonts\\slick.woff"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\hotdeal.png",
+      "PackagePath": "staticwebassets\\img\\hotdeal.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\product01.png",
+      "PackagePath": "staticwebassets\\img\\product01.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\product02.png",
+      "PackagePath": "staticwebassets\\img\\product02.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\product03.png",
+      "PackagePath": "staticwebassets\\img\\product03.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\product04.png",
+      "PackagePath": "staticwebassets\\img\\product04.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\product05.png",
+      "PackagePath": "staticwebassets\\img\\product05.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\product06.png",
+      "PackagePath": "staticwebassets\\img\\product06.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\product07.png",
+      "PackagePath": "staticwebassets\\img\\product07.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\product08.png",
+      "PackagePath": "staticwebassets\\img\\product08.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\product09.png",
+      "PackagePath": "staticwebassets\\img\\product09.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\shop01.png",
+      "PackagePath": "staticwebassets\\img\\shop01.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\shop02.png",
+      "PackagePath": "staticwebassets\\img\\shop02.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\img\\shop03.png",
+      "PackagePath": "staticwebassets\\img\\shop03.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\js\\jquery.zoom.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.zoom.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\js\\nouislider.min.js",
+      "PackagePath": "staticwebassets\\js\\nouislider.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\js\\slick.min.js",
+      "PackagePath": "staticwebassets\\js\\slick.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-57-01.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-57-01.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-57-24.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-57-24.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-57-41.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-57-41.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-57-45.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-57-45.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-57-50.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-57-50.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-57-54.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-57-54.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-58-00.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-58-00.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-58-03.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-58-03.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-58-14.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-58-14.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-58-17.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-58-17.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-58-23.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-58-23.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-58-27.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-58-27.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-58-32.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-58-32.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-58-35.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-58-35.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-58-40.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-58-40.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-59-38.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-59-38.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\photo_2023-12-26_12-59-45.jpg",
+      "PackagePath": "staticwebassets\\photo_2023-12-26_12-59-45.jpg"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\screenshot\\Checkout.png",
+      "PackagePath": "staticwebassets\\screenshot\\Checkout.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\screenshot\\Index.png",
+      "PackagePath": "staticwebassets\\screenshot\\Index.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\screenshot\\Product.png",
+      "PackagePath": "staticwebassets\\screenshot\\Product.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\screenshot\\Regular.png",
+      "PackagePath": "staticwebassets\\screenshot\\Regular.png"
+    },
+    {
+      "Id": "E:\\College\\Visual programming\\LapZone_Project\\Branch1.4\\LapZone\\LapZone\\wwwroot\\screenshot\\Store.png",
+      "PackagePath": "staticwebassets\\screenshot\\Store.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.LapZone.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.LapZone.props",
+      "PackagePath": "build\\LapZone.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.LapZone.props",
+      "PackagePath": "buildMultiTargeting\\LapZone.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.LapZone.props",
+      "PackagePath": "buildTransitive\\LapZone.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

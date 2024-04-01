@@ -1,0 +1,98 @@
+﻿@model IEnumerable<LapZone.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Product Index</title>
+
+    <style>
+        .profile-image {
+
+            width: 80px; /* Set a fixed width for the image container */
+            height: 80px; /* Set a fixed height for the image container */
+            overflow: hidden; /* Hide overflow in case the image is larger than the container */
+        }
+
+            .profile-image img {
+                width: 100%; /* Make the image fill the container */
+                height: auto; /* Maintain the aspect ratio */
+                display: block; /* Remove any default spacing added by inline elements */
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Index</h2>
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Product Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Stock Quantity
+                    </th>
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        Product Image
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StockQuantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                        </td>
+                        <td>
+                            <div class="profile-image">
+                                <img src="~/Images/Products/@item.ImagePath" alt="@item.ProductName">
+                            </div>
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a>
+                            <form asp-controller="Product" asp-action="Delete" method="post">
+                                <input type="hidden" name="id" value="@item.ProductId" />
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* site.css */
+
+/*@keyframes borderAnimation {
+    0% {
+        border-color: #d10024;
+        color: #fff;
+    }
+
+    50% {
+        border-color: #1e1f29;*/ /* Change to the color you desire */
+        /*color:  #d10024;
+    }
+
+    100% {
+        border-color: #d10024;
+        color: #fff;
+    }
+}*/
+
+.logo h1 {
+    border-top: 2px solid #d10024;
+    border-bottom: 2px solid #d10024;
+    padding: 10px;
+    color: #fff;
+/*    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+*/    border-radius: 8px;
+/*    display: inline-block;
+*/    /*animation: borderAnimation 2s infinite;*/ /* Adjust the duration as needed */
+}
+
+.logo:hover h1 {
+    border-color: #1e1f29; /* Change to the color you desire */
+    color: #d10024;
+/*    animation: borderAnimation 1s;
+*/
+
+
+
+}

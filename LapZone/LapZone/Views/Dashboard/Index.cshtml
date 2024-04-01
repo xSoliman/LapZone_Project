@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+      
+
+        .main-container {
+            margin: 100px auto ;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            color: #000000;
+        }
+
+        .welcome-message {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #e74c3c;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            font-size: 18px;
+            margin: 10px;
+            padding: 15px 25px;
+            width: 180px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #d10024;
+            color: #fff;
+            /* border: 2px solid #c0392b; */
+        }
+
+            .btn-primary:hover {
+                background-color: #1e1f29;
+            }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="welcome-message">
+            <h3>Welcome to the Admin Dashboard!</h3>
+        </div>
+
+        <div class="btn-container">
+            <a asp-controller="Category" asp-action="Index" class="btn btn-primary">Categories</a>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-primary">Products</a>
+            <a href="#" class="btn btn-primary">Orders</a>
+            <a href="#" class="btn btn-primary">Reports</a>
+            <a href="#" class="btn btn-primary">Users</a>
+            <a href="#" class="btn btn-primary">Admins</a>
+        </div>
+    </div>
+</body>
+</html>

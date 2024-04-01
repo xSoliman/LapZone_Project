@@ -1,0 +1,198 @@
+﻿@model IEnumerable<LapZone.Models.Address>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Addresses</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .addresses-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .addresses-header {
+            color: #1e1f29;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .action-buttons {
+            text-align: left;
+            transition: transform 0.2s;
+            margin-bottom: 0px;
+        }
+
+            .action-buttons a {
+                font-size: 1.6rem;
+                margin-left: 10px;
+                transition: transform 0.2s;
+                color: green;
+                font-weight: 500;
+                text-decoration: none;
+                transition: font-size 0.3s ease;
+            }
+
+                .action-buttons a:hover {
+                    font-size: 1.7rem;
+                }
+
+
+        .addresses-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 5px; /* Adjusted to leave space for the buttons */
+        }
+
+            .addresses-table th, .addresses-table td {
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .addresses-table th {
+                background-color: #1e1f29;
+                color: #fff;
+            }
+
+            .addresses-table tbody tr:hover {
+                background-color: #f5f5f5;
+            }
+
+        .action-icons i {
+            transition: font-size 0.3s ease; /* Adjust the duration (0.3s) and easing function if needed */
+        }
+
+            .action-icons i:hover {
+                font-size: 2.5rem;
+            }
+
+        .action-icons i {
+            font-size: 2rem;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .modal-dialog {
+            max-width: 400px;
+        }
+
+        .modal-title {
+            color: #1e1f29;
+        }
+
+        .modal-body {
+            color: #333;
+        }
+
+        .modal-footer button {
+            color: #fff;
+            background-color: #d10024;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .modal-footer button:hover {
+                background-color: #1e1f29;
+            }
+
+        .my-profile-link {
+            color: #d10024;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+            .my-profile-link:hover {
+                color: #1e1f29;
+            }
+    </style>
+</head>
+<body>
+    <div class="addresses-container">
+        <a asp-controller="UserProfile" asp-action="Index" class="my-profile-link"><i style="font-size:3rem;" class="bi bi-person-fill-gear"></i></a>
+        <h2 class="addresses-header">Addresses</h2>
+        <div class="action-buttons">
+            <a asp-action="Create"><i style="color: green;" class="bi bi-house-add"></i> Add New</a>
+        </div>
+        <table class="addresses-table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Country)</th>
+                    <th>@Html.DisplayNameFor(model => model.Governorate)</th>
+                    <th>@Html.DisplayNameFor(model => model.City)</th>
+                    <th>@Html.DisplayNameFor(model => model.AddressLine)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Country)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Governorate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.City)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AddressLine)</td>
+                        <td class="action-icons">
+                            <a asp-action="Edit" asp-route-id="@item.AddressId" data-toggle="tooltip" data-placement="top" title="Edit the address">
+                                <i style="color: deepskyblue;" class="bi bi-house-gear"></i>
+                            </a>
+                            <form asp-controller="Addresses" asp-action="Delete" method="post" style="display: inline;">
+                                <input type="hidden" name="id" value="@item.AddressId" />
+                                <button type="submit" style="border: none; background-color: transparent; cursor: pointer;">
+                                    <i style="color: red;" class="bi bi-house-x" data-toggle="tooltip" data-placement="top" title="Delete the address"></i>
+                                </button>
+                            </form>
+
+                            <div class="modal fade" id="deleteModal-@item.AddressId" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel-@item.AddressId" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteModalLabel-@item.AddressId">Confirm Deletion</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this address?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <form asp-controller="Addresses" asp-action="Delete" method="post">
+                                                <input type="hidden" name="id" value="@item.AddressId" />
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+﻿@* Home *@
+@model dynamic
+
+@{
+    bool isInWishlist = ViewBag.IsInWishlist as bool? ?? false;
+}
+@{
+    int? userId = null;
+
+    if (Context.Request.Cookies.ContainsKey(".AspNetCore.Session"))
+    {
+        userId = Context.Session.GetInt32("UserId");
+
+    }
+}
+<html lang="en">
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+                @for (int i = 0; i < Math.Min(3, Model.Categories.Count); i++)
+                {
+                    var cat = Model.Categories[i];
+
+                    <!-- shop -->
+                    <div class="col-md-4 col-xs-6">
+                        <div class="shop">
+                            <div class="shop-img">
+                                <img src="~/Images/Categories/@cat.ImagePath" alt="">
+                            </div>
+                            <div class="shop-body">
+                                <h3>@cat.CategoryName<br>Collection</h3>
+                                <a asp-controller="ProductStore" asp-action="Search" asp-route-categoryId="@cat.CategoryId" class="cta-btn">
+                                    Shop now <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /shop -->
+                }
+
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Some Products</h3>
+
+                    </div>
+                </div>
+                <!-- /section title -->
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab1" class="tab-pane active">
+                                <div class="products-slick" data-nav="#slick-nav-1">
+                                    @foreach (var product in Model.Products)
+                                    {
+                                        <div class="col-md-4 col-xs-6">
+                                            <div class="product">
+                                                <div class="product-img">
+                                                    <img src="~/Images/Products/@product.ImagePath" alt="" />
+                                                    @* <div class="product-label">
+                                                <span class="new">NEW</span>
+                                                </div> *@
+                                                </div>
+                                                <div class="product-body">
+                                                    <p class="product-category">@product.Category.CategoryName</p>
+
+                                                    <h3 class="product-name">
+                                                        <a asp-controller="ProductDetails" asp-action="Index" asp-route-id="@product.ProductId">@product.ProductName</a>
+                                                    </h3>
+                                                    <h4 class="product-price">@product.Price</h4>
+                                                    @*    <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                </div> *@
+                                                    @if (!Model.InWishList.Contains(product.ProductId))
+                                                    {
+                                                        <!-- Product is not in the wishlist -->
+                                                        <form id="addToWishlistForm_@product.ProductId" asp-controller="Wishlist" asp-action="AddToWishlist" method="post">
+                                                            <input type="hidden" name="productId" value="@product.ProductId" />
+                                                            <input type="hidden" name="sourcePage" value="Home" />
+
+                                                            <div class="product-btns">
+                                                                <button type="button" class="add-to-wishlist" onclick="toggleWishlist(@product.ProductId, false)">
+                                                                    <i class="fa fa-heart-o"></i><span class="tooltipp">Add to wishlist</span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    }
+                                                    else
+                                                    {
+                                                        <!-- Product is in the wishlist -->
+                                                        <form id="removeFromWishlistForm_@product.ProductId" asp-controller="Wishlist" asp-action="RemoveFromWishlist" method="post">
+                                                            <input type="hidden" name="productId" value="@product.ProductId" />
+                                                            <input type="hidden" name="sourcePage" value="Home" />
+
+                                                            <div class="product-btns">
+                                                                <button type="button" class="add-to-wishlist" onclick="toggleWishlist(@product.ProductId, true)">
+                                                                    <i style="color:#d10024" class="fa fa-heart"></i><span class="tooltipp">Remove from wishlist</span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    }
+                                                </div>
+                                                @if (product.StockQuantity > 0)
+                                                {
+                                                    <form asp-controller="Cart" asp-action="AddToCart" method="post" onsubmit="return addToCart(event)">
+                                                        <input type="hidden" name="productId" value="@product.ProductId" />
+                                                        <div class="add-to-cart">
+                                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                                                        </div>
+                                                    </form>
+                                                }
+                                                else
+                                                {
+                                                    <div class="add-to-cart">
+                                                        <i style="color:white">out of stock <i class="bi bi-emoji-frown"></i></i>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    <div id="slick-nav-1" class="products-slick-nav"></div>
+                                </div>
+                                <!-- /tab -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Products tab & slick -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+    </div>
+    <!-- /SECTION -->
+    <!-- HOT DEAL SECTION -->
+    <div id="hot-deal" class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="hot-deal">
+                        <h2 class="text-uppercase">Why Choose US</h2>
+
+                        <ul class="hot-deal-countdown">
+                            <li>
+                                <div>
+                                    <h3>Safe</h3>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3>Quality</h3>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3>Speed</h3>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3>Easy</h3>
+
+                                </div>
+                            </li>
+                        </ul>
+                        <p>For Contiune Shopping</p>
+                        <a asp-controller="ProductStore" asp-action="Index" class="primary-btn cta-btn">Shop now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+
+    <!-- /SECTION -->
+    <div class="text-center">
+    </div>
+
+   <script>
+        function toggleWishlist(productId, isInWishlist) {
+            var isAuthenticated = @(userId != null ? "true" : "false");
+
+            if (!isAuthenticated) {
+                alert('Please login first.');
+                event.preventDefault(); // Prevent the form submission
+                return;
+            }
+
+            if (isInWishlist) {
+                // Product is in the wishlist, remove it
+                document.getElementById('removeFromWishlistForm_' + productId).submit();
+            } else {
+                // Product is not in the wishlist, add it
+                document.getElementById('addToWishlistForm_' + productId).submit();
+            }
+        }
+
+
+        function addToCart(event) {
+            // Check if the user is authenticated
+            var isAuthenticated = @(userId != null ? "true" : "false");
+
+            if (!isAuthenticated) {
+                alert('Please login first.');
+                event.preventDefault(); // Prevent the form submission
+                return false; // Prevent form submission
+            }
+            return true;
+        }
+
+
+    </script>
+</body>
+</html>
